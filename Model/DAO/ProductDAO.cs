@@ -36,5 +36,10 @@ namespace Model.DAO
         {
             return db.Products.Find(id);
         }
+
+        public List<Product> ListByCategoryId(long categoryID)
+        {
+            return db.Products.Where(x => x.CategoryID == categoryID).ToList();
+        }
     }
 }

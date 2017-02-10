@@ -27,6 +27,8 @@ namespace WebShop.Controllers
         public ActionResult Category(long categoryId)
         {
             var category = new CategoryDAO().ViewDetail(categoryId);
+            ViewBag.Category = category;
+            var model = new ProductDAO().ListByCategoryId(categoryId);
             return View(category);
         }
 
