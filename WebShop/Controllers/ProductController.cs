@@ -24,12 +24,12 @@ namespace WebShop.Controllers
             return PartialView(model);
         }
 
-        public ActionResult Category(long categoryId)
+        public ActionResult Category(long categoryId, int pageIndex = 1 , int pageSize = 2)
         {
             var category = new CategoryDAO().ViewDetail(categoryId);
             ViewBag.Category = category;
             var model = new ProductDAO().ListByCategoryId(categoryId);
-            return View(category);
+            return View(model);
         }
 
         public ActionResult Detail(long productId)

@@ -4,18 +4,7 @@
     ViewBag.Title = category.Name;
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-@section Slide{
-<div class="header_slide">
-    <div class="header_bottom_left">
-        <div class="categories">
-            @{ Html.RenderAction("ProductCategory", "Product");}
-        </div>
-    </div>
-    <div class="clear"></div>
-</div>
-
-        
+  
 }
 <div class="content">
     <div class="content_top">
@@ -45,6 +34,6 @@
                 </div>
 
             </div>
-        }     
+        } 
     </div>
 </div>
