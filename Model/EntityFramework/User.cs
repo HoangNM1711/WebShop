@@ -12,15 +12,15 @@
         public long ID { get; set; }
 
         [StringLength(50)]
-        [Display(Name="Tài khoản")]
+        [Display(Name = "Tài khoản")]
         public string UserName { get; set; }
 
         [StringLength(32)]
-        [Display(Name="Mật khẩu")]
+        [Display(Name = "Mật khẩu")]
         public string Password { get; set; }
 
         [StringLength(50)]
-        [Display(Name="Họ tên")]
+        [Display(Name = "Họ tên")]
         public string Name { get; set; }
 
         [StringLength(50)]

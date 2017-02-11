@@ -76,9 +76,12 @@
     <Compile Include="EntityFramework\Footer.cs" />
     <Compile Include="EntityFramework\Menu.cs" />
     <Compile Include="EntityFramework\MenuType.cs" />
+    <Compile Include="EntityFramework\Order.cs" />
+    <Compile Include="EntityFramework\OrderDetail.cs" />
     <Compile Include="EntityFramework\Product.cs" />
     <Compile Include="EntityFramework\ProductCategory.cs" />
     <Compile Include="EntityFramework\Slide.cs" />
+    <Compile Include="EntityFramework\sysdiagram.cs" />
     <Compile Include="EntityFramework\SystemConfig.cs" />
     <Compile Include="EntityFramework\Tag.cs" />
     <Compile Include="EntityFramework\User.cs" />
