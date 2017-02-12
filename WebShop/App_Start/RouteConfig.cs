@@ -19,8 +19,6 @@ namespace WebShop
                 defaults: new { controller = "Product", action = "Category", id = UrlParameter.Optional },
                 namespaces: new[] { "WebShop.Controllers" }
             );
-
-
             routes.MapRoute(
                name: "Product Detail",
                url: "chi-tiet/{metatitle}-{productId}",
@@ -34,6 +32,14 @@ namespace WebShop
               defaults: new { controller = "About", action = "Index", id = UrlParameter.Optional },
               namespaces: new[] { "WebShop.Controllers" }
           );
+
+
+            routes.MapRoute(
+                name: "Add Cart",
+                url: "them-gio-hang",
+                defaults: new { controller = "CartItem", action = "AddItem", id = UrlParameter.Optional },
+                namespaces: new[] { "WebShop.Controllers" }
+           );
 
             routes.MapRoute(
                 name: "Default",
