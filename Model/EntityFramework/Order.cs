@@ -19,6 +19,9 @@ namespace Model.EntityFramework
         public string ShipName { get; set; }
 
         [StringLength(50)]
+        public string ShipMobile { get; set; }
+
+        [StringLength(50)]
         public string ShipAddress { get; set; }
 
         [StringLength(50)]

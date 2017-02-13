@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using WebShop.Models;
 
 namespace WebShop.Controllers
 {
@@ -25,6 +26,19 @@ namespace WebShop.Controllers
             var model = new MenuDAO().ListByGroup(1);
              
             return PartialView(model);
+        }
+
+        [ChildActionOnly]
+        public PartialViewResult CartMenu()
+        {
+            var Cart = Session[Common.Constants.CartSession];
+            var list = new List<CartItem>();
+            if (Cart != null)
+            {
+                list = (List<CartItem>)Cart;
+            }
+
+            return PartialView(list);
         }
 
         [ChildActionOnly]

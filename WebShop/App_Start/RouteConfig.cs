@@ -33,6 +33,13 @@ namespace WebShop
               namespaces: new[] { "WebShop.Controllers" }
           );
 
+            routes.MapRoute(
+            name: "Cart",
+            url: "gio-hang",
+            defaults: new { controller = "CartItem", action = "Index", id = UrlParameter.Optional },
+            namespaces: new[] { "WebShop.Controllers" }
+        );
+
 
             routes.MapRoute(
                 name: "Add Cart",
@@ -42,11 +49,25 @@ namespace WebShop
            );
 
             routes.MapRoute(
+               name: "Payment",
+               url: "thanh-toan",
+               defaults: new { controller = "CartItem", action = "Payment", id = UrlParameter.Optional },
+               namespaces: new[] { "WebShop.Controllers" }
+          );
+
+            routes.MapRoute(
+              name: "Payment Success",
+              url: "hoan-thanh",
+              defaults: new { controller = "CartItem", action = "Success", id = UrlParameter.Optional },
+              namespaces: new[] { "WebShop.Controllers" }
+         );
+
+            routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional },
-                namespaces: new[] {"WebShop.Controllers"}
+                namespaces: new[] { "WebShop.Controllers" }
             );
-       }
+        }
     }
 }

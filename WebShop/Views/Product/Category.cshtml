@@ -5,7 +5,6 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
   
-}
 <div class="content">
     <div class="content_top">
         <div class="heading">
@@ -28,7 +27,7 @@
                         <p><span class="rupees">@(item.Price.HasValue?item.Price.Value.ToString("N0"):"Liên hệ")</span></p>
                     </div>
                     <div class="add-cart">
-                        <h4><a href="/gio-hang/@item.ID">Add to Cart</a></h4>
+                        <h4><a href="/them-gio-hang?productId=@item.ID&quantity=1">Thêm vào giỏ hàng</a></h4>
                     </div>
                     <div class="clear"></div>
                 </div>
