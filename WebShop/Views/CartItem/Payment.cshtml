@@ -39,33 +39,39 @@
         }
 
     </div>
+
     <div class="section group">
-        <div class="col-md-6">
-            @using (Html.BeginForm("Payment", "CartItem", FormMethod.Post))
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4">
+                @using (Html.BeginForm("Payment", "CartItem", FormMethod.Post))
             {
 
-                <div class="form-group">
-                    <label>Người nhận</label>
-                    <input class="form-control" name="shipName" />
-                </div>
+                    <div class="form-group">
+                        <label>Người nhận</label>
+                        <input class="form-control" name="shipName" />
+                    </div>
 
-                <div class="form-group">
-                    <label>SĐT</label>
-                    <input class="form-control" name="mobile" />
-                </div>
+                    <div class="form-group">
+                        <label>SĐT</label>
+                        <input class="form-control" name="mobile" />
+                    </div>
 
-                <div class="form-group">
-                    <label>Địa chỉ</label>
-                    <input class="form-control" name="address" />
-                </div>
+                    <div class="form-group">
+                        <label>Địa chỉ</label>
+                        <input class="form-control" name="address" />
+                    </div>
 
-                <div class="form-group">
-                    <label>Email</label>
-                    <input class="form-control" name="email" />
-                </div>
-                <button class="btn" type="submit">Gửi đơn hàng</button>
-            }
-         </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input class="form-control" name="email" />
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-default" type="submit">Gửi đơn hàng</button>
+                        <a href="/" class="btn btn-default">Trở về trang chủ</a>
+                    </div>
+                }
+            </div>
 
-    </div>       
+        </div>
+    </div>
 </div>

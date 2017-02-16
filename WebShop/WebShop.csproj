@@ -1529,6 +1529,7 @@
     <Content Include="Assets\Client\js\script.js" />
     <Content Include="Assets\Client\js\slides.min.jquery.js" />
     <Content Include="Assets\Client\js\startstop-slider.js" />
+    <Content Include="Assets\Client\template\NewOrder.html" />
     <Content Include="Content\PagedList.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -1644,7 +1645,9 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -1680,6 +1683,10 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{0F2CD3CE-A81B-479B-8058-D3BB27B3B3D1}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Model\Model.csproj">
       <Project>{702782e9-16a2-4036-9302-5a8d34f22819}</Project>
       <Name>Model</Name>

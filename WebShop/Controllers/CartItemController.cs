@@ -7,6 +7,8 @@ using System.Web.Mvc;
 using WebShop.Models;
 using System.Web.Script.Serialization;
 using Model.EntityFramework;
+using Common;
+using System.Configuration;
 
 namespace WebShop.Controllers
 {
@@ -124,12 +126,12 @@ namespace WebShop.Controllers
             order.ShipMobile = mobile;
             order.ShipName = shipName;
             order.ShipEmail = email;
-
-            var id = new OrderDAO().Insert(order);
-            var Cart = (List<CartItem>)Session[CartSession];
-            var detailDao = new OrderDetailDAO();
             try
             {
+                var id = new OrderDAO().Insert(order);
+                var Cart = (List<CartItem>)Session[CartSession];
+                var detailDao = new OrderDetailDAO();
+                Decimal total = 0;
                 foreach (var item in Cart)
                 {
                     var orderDetail = new OrderDetail();
@@ -139,7 +141,19 @@ namespace WebShop.Controllers
                     orderDetail.Quantity = item.Product.Quantity;
 
                     detailDao.Insert(orderDetail);
+
+                    total += (item.Product.Price.GetValueOrDefault(0) * item.Quantity);
                 }
+                string content = System.IO.File.ReadAllText(Server.MapPath("~/Assets/client/template/NewOrder.html"));
+
+                content = content.Replace("{{CustomerName}}", shipName);
+                content = content.Replace("{{Phone}}", mobile);
+                content = content.Replace("{{Email}}", email);
+                content = content.Replace("{{Address}}", address);
+                content = content.Replace("{{Total}}", total.ToString("N0"));
+                var toEmail = ConfigurationManager.AppSettings["ToEmailAddress"].ToString();
+                new MailHelper().SendMail(email, "Đơn hàng test từ Shop của SangerZ", content);
+                new MailHelper().SendMail(toEmail,"Đơn hàng test từ Shop của SangerZ", content);
             }
             catch(Exception ex)
             {
