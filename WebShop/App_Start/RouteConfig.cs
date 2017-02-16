@@ -34,6 +34,13 @@ namespace WebShop
           );
 
             routes.MapRoute(
+            name: "Contact",
+            url: "lien-he",
+            defaults: new { controller = "Contact", action = "Index", id = UrlParameter.Optional },
+            namespaces: new[] { "WebShop.Controllers" }
+        );
+
+            routes.MapRoute(
             name: "Cart",
             url: "gio-hang",
             defaults: new { controller = "CartItem", action = "Index", id = UrlParameter.Optional },

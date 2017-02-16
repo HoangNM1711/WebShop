@@ -217,6 +217,7 @@
     <Compile Include="Common\Encryptor.cs" />
     <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\CartItemController.cs" />
+    <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Global.asax.cs">
@@ -1511,6 +1512,7 @@
     <Content Include="Assets\Client\js\bootstrap.js" />
     <Content Include="Assets\Client\js\bootstrap.min.js" />
     <Content Include="Assets\Client\js\controller\CartController.js" />
+    <Content Include="Assets\Client\js\controller\contacController.js" />
     <Content Include="Assets\Client\js\easing.js" />
     <Content Include="Assets\Client\js\easyResponsiveTabs.js" />
     <Content Include="Assets\Client\js\imagezoom.js" />
@@ -1668,6 +1670,7 @@
     <Content Include="Views\Shared\CartMenu.cshtml" />
     <Content Include="Views\CartItem\Payment.cshtml" />
     <Content Include="Views\CartItem\Success.cshtml" />
+    <Content Include="Views\Contact\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
