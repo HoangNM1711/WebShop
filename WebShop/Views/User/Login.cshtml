@@ -1,0 +1,47 @@
+﻿    @model WebShop.Models.Login
+
+@{
+    ViewBag.Title = "Đăng nhập";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="content">
+
+@using (Html.BeginForm("Login", "User", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h2>Đăng nhập</h2>
+        <hr />
+        <div class="form-group">
+            <label class="control-label col-md-5"></label>
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.Username, htmlAttributes: new { @class = "control-label col-md-5" })
+                <div class="col-md-3">
+                    @Html.TextBoxFor(model => model.Username, new { @class = "form-control" } )
+                    @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-5" })
+                <div class="col-md-3">
+                    @Html.PasswordFor(model => model.Password, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-5 col-md-7">
+                    <input type="submit" value="Đăng nhập" class="btn btn-default" />
+                    <a href="/dang-ky" class="btn btn-default">Đăng ký</a>
+                </div>
+            </div>
+        </div>
+
+    }
+</div>
+

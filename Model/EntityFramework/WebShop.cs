@@ -121,5 +121,6 @@ namespace Model.EntityFramework
                 .Property(e => e.ModifiedBy)
                 .IsUnicode(false);
         }
+
     }
 }
