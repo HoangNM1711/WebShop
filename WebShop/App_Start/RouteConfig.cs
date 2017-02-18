@@ -12,6 +12,8 @@ namespace WebShop
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+            routes.IgnoreRoute("{*botdetect}",
+             new { botdetect = @"(.*)BotDetectCaptcha\.ashx" });
 
             routes.MapRoute(
                 name: "Product Category",
@@ -46,6 +48,12 @@ namespace WebShop
             defaults: new { controller = "CartItem", action = "Index", id = UrlParameter.Optional },
             namespaces: new[] { "WebShop.Controllers" }
         );
+          routes.MapRoute(
+               name: "Register",
+               url: "dang-ky",
+               defaults: new { controller = "User", action = "Register", id = UrlParameter.Optional },
+               namespaces: new[] { "WebShop.Controllers" }
+           );
 
 
             routes.MapRoute(
